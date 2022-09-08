@@ -9,17 +9,15 @@
 <body>
     <script>
      
-        let funcRefactor = (arr) =>
+     let funcRefactor = (arr) =>
 {
  for (let i = 0; i < arr.length-1; i++) {
  if (arr[i].type == arr[i + 1].type)
  {
-  arr[i].value = arr[i].value + ', ' + arr[i + 1].value;
+  arr[i].value += ', ' + arr[i + 1].value;
   arr.splice(i+1, 1);
  }
  }
-
- return arr;
 }
 
 let funcPrint = (arr) => {
@@ -36,7 +34,8 @@ let input = [
  {type : 'C', value:'Ford'}
 ]
 
-console.log(funcPrint(funcRefactor(input)));
+funcRefactor(input);
+console.log(funcPrint(input))
     </script>
 </body>
 </html>
