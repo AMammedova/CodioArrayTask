@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+        let funcRefactor = (arr) =>
+{
+ for (let i = 0; i < arr.length-1; i++) {
+ if (arr[i].type == arr[i + 1].type)
+ {
+  arr[i].value = arr[i].value + ', ' + arr[i + 1].value;
+  arr.splice(i+1, 1);
+ }
+ }
+
+ return arr;
+}
+
+let funcPrint = (arr) => {
+ for (let i = 0; i < arr.length; i++){
+  console.log(arr[i]);
+ }
+}
+
+let input = [
+ { type: 'A', value: 'Tesla' },
+ { type: 'A', value: 'GMC' },
+ { type: 'B', value: 'Kia' },
+ { type: 'C', value: 'Dodge' },
+ {type : 'C', value:'Ford'}
+]
+
+console.log(funcPrint(funcRefactor(input)));
+    </script>
+</body>
+</html>
